@@ -1,9 +1,13 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	models "github.com/Singebob/web-api/model"
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
 	r := gin.Default()
+	models.ConnectDataBase()
 	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "pong",
