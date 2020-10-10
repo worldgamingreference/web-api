@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/Singebob/web-api/controllers"
 	models "github.com/Singebob/web-api/model"
+	"github.com/Singebob/web-api/router"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
@@ -22,6 +22,6 @@ func main() {
 			"message": "pong",
 		})
 	})
-	r.GET("/servers", controllers.FindServers)
+	r.GET("/servers", router.FindServers)
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
